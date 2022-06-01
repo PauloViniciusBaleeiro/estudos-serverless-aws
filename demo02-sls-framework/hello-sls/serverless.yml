@@ -1,0 +1,17 @@
+org: pvshark
+app: hello-sls
+service: hello-sls
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  hello:
+    handler: handler.hello
+    events: 
+      - http: 
+          path: hello
+          method: get
